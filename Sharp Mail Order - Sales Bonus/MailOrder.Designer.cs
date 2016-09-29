@@ -65,17 +65,18 @@
             // 
             // TotalHoursWorkedTextBox
             // 
-            this.TotalHoursWorkedTextBox.Location = new System.Drawing.Point(301, 77);
+            this.TotalHoursWorkedTextBox.Location = new System.Drawing.Point(326, 77);
             this.TotalHoursWorkedTextBox.Name = "TotalHoursWorkedTextBox";
-            this.TotalHoursWorkedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TotalHoursWorkedTextBox.Size = new System.Drawing.Size(75, 20);
             this.TotalHoursWorkedTextBox.TabIndex = 2;
             // 
             // TotalMonthlySalesTextBox
             // 
-            this.TotalMonthlySalesTextBox.Location = new System.Drawing.Point(301, 111);
+            this.TotalMonthlySalesTextBox.Location = new System.Drawing.Point(326, 111);
             this.TotalMonthlySalesTextBox.Name = "TotalMonthlySalesTextBox";
-            this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(75, 20);
             this.TotalMonthlySalesTextBox.TabIndex = 3;
+            this.TotalMonthlySalesTextBox.Text = "0.00";
             // 
             // EmployeeNameLabel
             // 
@@ -85,7 +86,6 @@
             this.EmployeeNameLabel.Size = new System.Drawing.Size(84, 13);
             this.EmployeeNameLabel.TabIndex = 0;
             this.EmployeeNameLabel.Text = "Employee Name";
-            this.EmployeeNameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // EmployeeIDLabel
             // 
@@ -126,12 +126,13 @@
             // SalesBonusTextBox
             // 
             this.SalesBonusTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SalesBonusTextBox.Location = new System.Drawing.Point(301, 145);
+            this.SalesBonusTextBox.Location = new System.Drawing.Point(326, 145);
             this.SalesBonusTextBox.Name = "SalesBonusTextBox";
             this.SalesBonusTextBox.ReadOnly = true;
-            this.SalesBonusTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SalesBonusTextBox.Size = new System.Drawing.Size(75, 20);
             this.SalesBonusTextBox.TabIndex = 9;
             this.SalesBonusTextBox.TabStop = false;
+            this.SalesBonusTextBox.Text = "0.00";
             // 
             // LanguagesGroupBox
             // 
