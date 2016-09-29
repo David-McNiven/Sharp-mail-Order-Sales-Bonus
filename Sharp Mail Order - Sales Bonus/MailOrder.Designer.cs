@@ -1,6 +1,6 @@
 ﻿namespace Sharp_Mail_Order___Sales_Bonus
 {
-    partial class Form1
+    partial class MailOrderSalesBonusForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,203 +28,218 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
+            this.EmployeeIDTextBox = new System.Windows.Forms.TextBox();
+            this.TotalHoursWorkedTextBox = new System.Windows.Forms.TextBox();
+            this.TotalMonthlySalesTextBox = new System.Windows.Forms.TextBox();
+            this.EmployeeNameLabel = new System.Windows.Forms.Label();
+            this.EmployeeIDLabel = new System.Windows.Forms.Label();
+            this.TotalHoursWorkedLabel = new System.Windows.Forms.Label();
+            this.TotalMonthlySalesLabel = new System.Windows.Forms.Label();
+            this.SalesBonusLabel = new System.Windows.Forms.Label();
+            this.SalesBonusTextBox = new System.Windows.Forms.TextBox();
+            this.LanguagesGroupBox = new System.Windows.Forms.GroupBox();
+            this.FrenchRadioButton = new System.Windows.Forms.RadioButton();
+            this.EnglishRadioButton = new System.Windows.Forms.RadioButton();
+            this.MailOrderLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.CalculateButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.LanguagesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MailOrderLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // EmployeeNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.EmployeeNameTextBox.Location = new System.Drawing.Point(301, 9);
+            this.EmployeeNameTextBox.Name = "EmployeeNameTextBox";
+            this.EmployeeNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.EmployeeNameTextBox.TabIndex = 0;
             // 
-            // textBox2
+            // EmployeeIDTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.EmployeeIDTextBox.Location = new System.Drawing.Point(301, 43);
+            this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
+            this.EmployeeIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.EmployeeIDTextBox.TabIndex = 1;
             // 
-            // textBox3
+            // TotalHoursWorkedTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(43, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.TotalHoursWorkedTextBox.Location = new System.Drawing.Point(301, 77);
+            this.TotalHoursWorkedTextBox.Name = "TotalHoursWorkedTextBox";
+            this.TotalHoursWorkedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TotalHoursWorkedTextBox.TabIndex = 2;
             // 
-            // textBox4
+            // TotalMonthlySalesTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(43, 167);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.TotalMonthlySalesTextBox.Location = new System.Drawing.Point(301, 111);
+            this.TotalMonthlySalesTextBox.Name = "TotalMonthlySalesTextBox";
+            this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TotalMonthlySalesTextBox.TabIndex = 3;
             // 
-            // label1
+            // EmployeeNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.EmployeeNameLabel.AutoSize = true;
+            this.EmployeeNameLabel.Location = new System.Drawing.Point(172, 12);
+            this.EmployeeNameLabel.Name = "EmployeeNameLabel";
+            this.EmployeeNameLabel.Size = new System.Drawing.Size(84, 13);
+            this.EmployeeNameLabel.TabIndex = 0;
+            this.EmployeeNameLabel.Text = "Employee Name";
+            this.EmployeeNameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // EmployeeIDLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(179, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.EmployeeIDLabel.AutoSize = true;
+            this.EmployeeIDLabel.Location = new System.Drawing.Point(172, 46);
+            this.EmployeeIDLabel.Name = "EmployeeIDLabel";
+            this.EmployeeIDLabel.Size = new System.Drawing.Size(67, 13);
+            this.EmployeeIDLabel.TabIndex = 1;
+            this.EmployeeIDLabel.Text = "Employee ID";
             // 
-            // label3
+            // TotalHoursWorkedLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.TotalHoursWorkedLabel.AutoSize = true;
+            this.TotalHoursWorkedLabel.Location = new System.Drawing.Point(172, 80);
+            this.TotalHoursWorkedLabel.Name = "TotalHoursWorkedLabel";
+            this.TotalHoursWorkedLabel.Size = new System.Drawing.Size(103, 13);
+            this.TotalHoursWorkedLabel.TabIndex = 2;
+            this.TotalHoursWorkedLabel.Text = "Total Hours Worked";
             // 
-            // label4
+            // TotalMonthlySalesLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
+            this.TotalMonthlySalesLabel.AutoSize = true;
+            this.TotalMonthlySalesLabel.Location = new System.Drawing.Point(172, 114);
+            this.TotalMonthlySalesLabel.Name = "TotalMonthlySalesLabel";
+            this.TotalMonthlySalesLabel.Size = new System.Drawing.Size(100, 13);
+            this.TotalMonthlySalesLabel.TabIndex = 3;
+            this.TotalMonthlySalesLabel.Text = "Total Monthly Sales";
             // 
-            // label5
+            // SalesBonusLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 207);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
+            this.SalesBonusLabel.AutoSize = true;
+            this.SalesBonusLabel.Location = new System.Drawing.Point(173, 148);
+            this.SalesBonusLabel.Name = "SalesBonusLabel";
+            this.SalesBonusLabel.Size = new System.Drawing.Size(66, 13);
+            this.SalesBonusLabel.TabIndex = 4;
+            this.SalesBonusLabel.Text = "Sales Bonus";
             // 
-            // textBox5
+            // SalesBonusTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(43, 207);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.SalesBonusTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.SalesBonusTextBox.Location = new System.Drawing.Point(301, 145);
+            this.SalesBonusTextBox.Name = "SalesBonusTextBox";
+            this.SalesBonusTextBox.ReadOnly = true;
+            this.SalesBonusTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SalesBonusTextBox.TabIndex = 9;
+            this.SalesBonusTextBox.TabStop = false;
             // 
-            // groupBox1
+            // LanguagesGroupBox
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(43, 242);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.LanguagesGroupBox.Controls.Add(this.FrenchRadioButton);
+            this.LanguagesGroupBox.Controls.Add(this.EnglishRadioButton);
+            this.LanguagesGroupBox.Location = new System.Drawing.Point(12, 162);
+            this.LanguagesGroupBox.Name = "LanguagesGroupBox";
+            this.LanguagesGroupBox.Size = new System.Drawing.Size(146, 45);
+            this.LanguagesGroupBox.TabIndex = 7;
+            this.LanguagesGroupBox.TabStop = false;
+            this.LanguagesGroupBox.Text = "Languages";
             // 
-            // radioButton2
+            // FrenchRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(109, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.FrenchRadioButton.AutoSize = true;
+            this.FrenchRadioButton.Location = new System.Drawing.Point(75, 19);
+            this.FrenchRadioButton.Name = "FrenchRadioButton";
+            this.FrenchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.FrenchRadioButton.TabIndex = 7;
+            this.FrenchRadioButton.TabStop = true;
+            this.FrenchRadioButton.Text = "Français";
+            this.FrenchRadioButton.UseVisualStyleBackColor = true;
+            this.FrenchRadioButton.CheckedChanged += new System.EventHandler(this.FrenchRadioButton_CheckedChanged);
             // 
-            // radioButton1
+            // EnglishRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(109, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.EnglishRadioButton.AutoSize = true;
+            this.EnglishRadioButton.Checked = true;
+            this.EnglishRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.EnglishRadioButton.Name = "EnglishRadioButton";
+            this.EnglishRadioButton.Size = new System.Drawing.Size(59, 17);
+            this.EnglishRadioButton.TabIndex = 7;
+            this.EnglishRadioButton.TabStop = true;
+            this.EnglishRadioButton.Text = "English";
+            this.EnglishRadioButton.UseVisualStyleBackColor = true;
+            this.EnglishRadioButton.CheckedChanged += new System.EventHandler(this.EnglishRadioButton_CheckedChanged);
             // 
-            // pictureBox1
+            // MailOrderLogoPictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(300, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 108);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.MailOrderLogoPictureBox.Location = new System.Drawing.Point(12, 12);
+            this.MailOrderLogoPictureBox.Name = "MailOrderLogoPictureBox";
+            this.MailOrderLogoPictureBox.Size = new System.Drawing.Size(146, 144);
+            this.MailOrderLogoPictureBox.TabIndex = 11;
+            this.MailOrderLogoPictureBox.TabStop = false;
             // 
-            // button1
+            // CalculateButton
             // 
-            this.button1.Location = new System.Drawing.Point(300, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CalculateButton.Location = new System.Drawing.Point(164, 184);
+            this.CalculateButton.Name = "CalculateButton";
+            this.CalculateButton.Size = new System.Drawing.Size(75, 23);
+            this.CalculateButton.TabIndex = 4;
+            this.CalculateButton.Text = "&Calculate";
+            this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
-            // button2
+            // PrintButton
             // 
-            this.button2.Location = new System.Drawing.Point(300, 196);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.PrintButton.Location = new System.Drawing.Point(245, 184);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(75, 23);
+            this.PrintButton.TabIndex = 5;
+            this.PrintButton.Text = "&Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
-            // button3
+            // NextButton
             // 
-            this.button3.Location = new System.Drawing.Point(300, 225);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.NextButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.NextButton.Location = new System.Drawing.Point(326, 184);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(75, 23);
+            this.NextButton.TabIndex = 6;
+            this.NextButton.Text = "&Next";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
-            // Form1
+            // MailOrderSalesBonusForm
             // 
+            this.AcceptButton = this.CalculateButton;
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 351);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.CancelButton = this.NextButton;
+            this.ClientSize = new System.Drawing.Size(414, 219);
+            this.Controls.Add(this.NextButton);
+            this.Controls.Add(this.PrintButton);
+            this.Controls.Add(this.CalculateButton);
+            this.Controls.Add(this.MailOrderLogoPictureBox);
+            this.Controls.Add(this.LanguagesGroupBox);
+            this.Controls.Add(this.SalesBonusTextBox);
+            this.Controls.Add(this.SalesBonusLabel);
+            this.Controls.Add(this.TotalMonthlySalesLabel);
+            this.Controls.Add(this.TotalHoursWorkedLabel);
+            this.Controls.Add(this.EmployeeIDLabel);
+            this.Controls.Add(this.EmployeeNameLabel);
+            this.Controls.Add(this.TotalMonthlySalesTextBox);
+            this.Controls.Add(this.TotalHoursWorkedTextBox);
+            this.Controls.Add(this.EmployeeIDTextBox);
+            this.Controls.Add(this.EmployeeNameTextBox);
+            this.MaximizeBox = false;
+            this.Name = "MailOrderSalesBonusForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sharp Mail Order - Sales Bonus";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.LanguagesGroupBox.ResumeLayout(false);
+            this.LanguagesGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MailOrderLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,23 +247,23 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox EmployeeNameTextBox;
+        private System.Windows.Forms.TextBox EmployeeIDTextBox;
+        private System.Windows.Forms.TextBox TotalHoursWorkedTextBox;
+        private System.Windows.Forms.TextBox TotalMonthlySalesTextBox;
+        private System.Windows.Forms.Label EmployeeNameLabel;
+        private System.Windows.Forms.Label EmployeeIDLabel;
+        private System.Windows.Forms.Label TotalHoursWorkedLabel;
+        private System.Windows.Forms.Label TotalMonthlySalesLabel;
+        private System.Windows.Forms.Label SalesBonusLabel;
+        private System.Windows.Forms.TextBox SalesBonusTextBox;
+        private System.Windows.Forms.GroupBox LanguagesGroupBox;
+        private System.Windows.Forms.RadioButton FrenchRadioButton;
+        private System.Windows.Forms.RadioButton EnglishRadioButton;
+        private System.Windows.Forms.PictureBox MailOrderLogoPictureBox;
+        private System.Windows.Forms.Button CalculateButton;
+        private System.Windows.Forms.Button PrintButton;
+        private System.Windows.Forms.Button NextButton;
     }
 }
 

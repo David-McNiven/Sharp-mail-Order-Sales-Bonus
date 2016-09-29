@@ -4,12 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Sharp Mail Oder - Sales Bonus	
-// Created by David McNiven
-// Student # 200330143	
-// Created on September 30th 2016	
-// App description
-
 namespace Sharp_Mail_Order___Sales_Bonus
 {
     static class Program
@@ -22,7 +16,7 @@ namespace Sharp_Mail_Order___Sales_Bonus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MailOrderSalesBonusForm());
         }
     }
 }
