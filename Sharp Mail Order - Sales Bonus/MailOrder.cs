@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ using System.Windows.Forms;
 // 6:00pm 29/09/2016 - added all form elements and started on basic funtionality
 //                     including tab order, alt+keyboard shortcuts and print message box
 // 7:00pm 29/09/2016 - languange switch working, next button working
+// 3:00pm 30/09/2016 - calculate working, input validating, mock logo in place
 
 
 namespace Sharp_Mail_Order___Sales_Bonus
@@ -33,34 +35,67 @@ namespace Sharp_Mail_Order___Sales_Bonus
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        /// <summary>
+        /// loads the form with focus on the employee name textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MailOrderSalesBonusForm_Load(object sender, EventArgs e)
         {
-
+            EmployeeNameTextBox.Focus();
         }
 
-        // determines the sales bonus only if all user input is valid
+        /// <summary>
+        /// determines the sales bonus only if all user input is valid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-
+            if (_IsValidTotalMonthlySales() != 0) 
+            {
+                double TotalBonusAmount = Double.Parse(TotalMonthlySalesTextBox.Text, NumberStyles.Currency, CultureInfo.CurrentCulture) * 0.02;
+                double PercentageHoursWorked = Convert.ToDouble(TotalHoursWorkedNumericUpDown.Value) / 160;
+                double SalesBonus = TotalBonusAmount * PercentageHoursWorked;
+                SalesBonusTextBox.Text = SalesBonus.ToString("C2");
+            } else {
+                SalesBonusTextBox.Text = "$0.00";
+            }
         }
 
-        // creates a message box popup to indicate the form is printing
+        /// <summary>
+        /// creates a message box popup to indicate the form is printing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("The form has been sent to the default printer.", "Printing");
+            if (PrintButton.Text.Equals("Print")) {
+                MessageBox.Show("The form has been sent to the default printer.", "Printing");
+            } else {
+                MessageBox.Show("Le formulaire a été envoyé à l'imprimante par défaut.", "Imprimer");
+            }
         }
 
-        // clears all the employee information EXCEPT the total monthly sales
-        // and sets the sales bonus back to default
+        /// <summary>
+        /// clears all the employee information EXCEPT the total monthly sales
+        /// and sets the sales bonus back to default
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             EmployeeNameTextBox.Text = "";
             EmployeeIDTextBox.Text = "";
-            TotalHoursWorkedTextBox.Text = "";
-            SalesBonusTextBox.Text = "0.00";
+            TotalHoursWorkedNumericUpDown.Value = 0;
+            SalesBonusTextBox.Text = "$0.00";
         }
 
-        // changes all label and button text to display in english
+        /// <summary>
+        /// changes all label and button text to display in english
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EnglishRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             EmployeeNameLabel.Text = "Employee Name";
@@ -74,7 +109,11 @@ namespace Sharp_Mail_Order___Sales_Bonus
             NextButton.Text = "Next";
         }
 
-        // changes all label and button text to display in french
+        /// <summary>
+        /// changes all label and button text to display in french
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrenchRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             EmployeeNameLabel.Text = "Nom de l'Employé";
@@ -86,6 +125,34 @@ namespace Sharp_Mail_Order___Sales_Bonus
             CalculateButton.Text = "Calculer";
             PrintButton.Text = "Imprimer";
             NextButton.Text = "Suivant";
+        }
+
+        /// <summary>
+        /// Validates user input any time the total monthyl sales value is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TotalMonthlySalesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _IsValidTotalMonthlySales();
+        }
+
+        /// <summary>
+        /// determines if the total monthly sales text can be parsed as a double
+        /// if it can it returns the value, if not shows an error message
+        /// and returns focus to the total monthly sales box
+        /// </summary>
+        /// <returns></returns>
+        private double _IsValidTotalMonthlySales()
+        {
+            double number;
+            if (!Double.TryParse(TotalMonthlySalesTextBox.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out number))
+            {
+                MessageBox.Show("Total Monthly Sales must be a dollar value.", "Invalid Input");
+                TotalMonthlySalesTextBox.Focus();
+                TotalMonthlySalesTextBox.SelectAll();
+            }
+            return number;
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
             this.EmployeeIDTextBox = new System.Windows.Forms.TextBox();
-            this.TotalHoursWorkedTextBox = new System.Windows.Forms.TextBox();
             this.TotalMonthlySalesTextBox = new System.Windows.Forms.TextBox();
             this.EmployeeNameLabel = new System.Windows.Forms.Label();
             this.EmployeeIDLabel = new System.Windows.Forms.Label();
@@ -41,11 +40,13 @@
             this.LanguagesGroupBox = new System.Windows.Forms.GroupBox();
             this.FrenchRadioButton = new System.Windows.Forms.RadioButton();
             this.EnglishRadioButton = new System.Windows.Forms.RadioButton();
-            this.MailOrderLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
+            this.TotalHoursWorkedNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MailOrderLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LanguagesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalHoursWorkedNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MailOrderLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,20 +64,14 @@
             this.EmployeeIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.EmployeeIDTextBox.TabIndex = 1;
             // 
-            // TotalHoursWorkedTextBox
-            // 
-            this.TotalHoursWorkedTextBox.Location = new System.Drawing.Point(326, 77);
-            this.TotalHoursWorkedTextBox.Name = "TotalHoursWorkedTextBox";
-            this.TotalHoursWorkedTextBox.Size = new System.Drawing.Size(75, 20);
-            this.TotalHoursWorkedTextBox.TabIndex = 2;
-            // 
             // TotalMonthlySalesTextBox
             // 
             this.TotalMonthlySalesTextBox.Location = new System.Drawing.Point(326, 111);
             this.TotalMonthlySalesTextBox.Name = "TotalMonthlySalesTextBox";
             this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(75, 20);
             this.TotalMonthlySalesTextBox.TabIndex = 3;
-            this.TotalMonthlySalesTextBox.Text = "0.00";
+            this.TotalMonthlySalesTextBox.Text = "$0.00";
+            this.TotalMonthlySalesTextBox.Leave += new System.EventHandler(this.TotalMonthlySalesTextBox_TextChanged);
             // 
             // EmployeeNameLabel
             // 
@@ -132,7 +127,7 @@
             this.SalesBonusTextBox.Size = new System.Drawing.Size(75, 20);
             this.SalesBonusTextBox.TabIndex = 9;
             this.SalesBonusTextBox.TabStop = false;
-            this.SalesBonusTextBox.Text = "0.00";
+            this.SalesBonusTextBox.Text = "$0.00";
             // 
             // LanguagesGroupBox
             // 
@@ -170,21 +165,13 @@
             this.EnglishRadioButton.UseVisualStyleBackColor = true;
             this.EnglishRadioButton.CheckedChanged += new System.EventHandler(this.EnglishRadioButton_CheckedChanged);
             // 
-            // MailOrderLogoPictureBox
-            // 
-            this.MailOrderLogoPictureBox.Location = new System.Drawing.Point(12, 12);
-            this.MailOrderLogoPictureBox.Name = "MailOrderLogoPictureBox";
-            this.MailOrderLogoPictureBox.Size = new System.Drawing.Size(146, 144);
-            this.MailOrderLogoPictureBox.TabIndex = 11;
-            this.MailOrderLogoPictureBox.TabStop = false;
-            // 
             // CalculateButton
             // 
             this.CalculateButton.Location = new System.Drawing.Point(164, 184);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(75, 23);
             this.CalculateButton.TabIndex = 4;
-            this.CalculateButton.Text = "&Calculate";
+            this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
             this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
@@ -194,7 +181,7 @@
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(75, 23);
             this.PrintButton.TabIndex = 5;
-            this.PrintButton.Text = "&Print";
+            this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
@@ -205,9 +192,32 @@
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(75, 23);
             this.NextButton.TabIndex = 6;
-            this.NextButton.Text = "&Next";
+            this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // TotalHoursWorkedNumericUpDown
+            // 
+            this.TotalHoursWorkedNumericUpDown.Location = new System.Drawing.Point(326, 78);
+            this.TotalHoursWorkedNumericUpDown.Maximum = new decimal(new int[] {
+            160,
+            0,
+            0,
+            0});
+            this.TotalHoursWorkedNumericUpDown.Name = "TotalHoursWorkedNumericUpDown";
+            this.TotalHoursWorkedNumericUpDown.Size = new System.Drawing.Size(76, 20);
+            this.TotalHoursWorkedNumericUpDown.TabIndex = 2;
+            this.TotalHoursWorkedNumericUpDown.ThousandsSeparator = true;
+            // 
+            // MailOrderLogoPictureBox
+            // 
+            this.MailOrderLogoPictureBox.Image = global::Sharp_Mail_Order___Sales_Bonus.Properties.Resources.Mail_Order___Sales_Bonus_Logo;
+            this.MailOrderLogoPictureBox.Location = new System.Drawing.Point(12, 12);
+            this.MailOrderLogoPictureBox.Name = "MailOrderLogoPictureBox";
+            this.MailOrderLogoPictureBox.Padding = new System.Windows.Forms.Padding(15);
+            this.MailOrderLogoPictureBox.Size = new System.Drawing.Size(146, 144);
+            this.MailOrderLogoPictureBox.TabIndex = 11;
+            this.MailOrderLogoPictureBox.TabStop = false;
             // 
             // MailOrderSalesBonusForm
             // 
@@ -217,6 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.NextButton;
             this.ClientSize = new System.Drawing.Size(414, 219);
+            this.Controls.Add(this.TotalHoursWorkedNumericUpDown);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.CalculateButton);
@@ -229,7 +240,6 @@
             this.Controls.Add(this.EmployeeIDLabel);
             this.Controls.Add(this.EmployeeNameLabel);
             this.Controls.Add(this.TotalMonthlySalesTextBox);
-            this.Controls.Add(this.TotalHoursWorkedTextBox);
             this.Controls.Add(this.EmployeeIDTextBox);
             this.Controls.Add(this.EmployeeNameTextBox);
             this.MaximizeBox = false;
@@ -237,9 +247,10 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sharp Mail Order - Sales Bonus";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MailOrderSalesBonusForm_Load);
             this.LanguagesGroupBox.ResumeLayout(false);
             this.LanguagesGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalHoursWorkedNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MailOrderLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,7 +261,6 @@
 
         private System.Windows.Forms.TextBox EmployeeNameTextBox;
         private System.Windows.Forms.TextBox EmployeeIDTextBox;
-        private System.Windows.Forms.TextBox TotalHoursWorkedTextBox;
         private System.Windows.Forms.TextBox TotalMonthlySalesTextBox;
         private System.Windows.Forms.Label EmployeeNameLabel;
         private System.Windows.Forms.Label EmployeeIDLabel;
@@ -265,6 +275,7 @@
         private System.Windows.Forms.Button CalculateButton;
         private System.Windows.Forms.Button PrintButton;
         private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.NumericUpDown TotalHoursWorkedNumericUpDown;
     }
 }
 
