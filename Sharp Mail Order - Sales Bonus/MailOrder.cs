@@ -24,6 +24,9 @@ using System.Windows.Forms;
 //                     including tab order, alt+keyboard shortcuts and print message box
 // 7:00pm 29/09/2016 - languange switch working, next button working
 // 3:00pm 30/09/2016 - calculate working, input validating, mock logo in place
+// 4:00pm 30/09/2016 - created slightly less placeholder logo and accompanying icon
+//                   - checked over work and documentation
+// 5:00pm 30/09/2016 - finalized and submitted
 
 
 namespace Sharp_Mail_Order___Sales_Bonus
@@ -46,13 +49,14 @@ namespace Sharp_Mail_Order___Sales_Bonus
         }
 
         /// <summary>
+        /// Calculate Button Event Handler
         /// determines the sales bonus only if all user input is valid
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            if (_IsValidTotalMonthlySales() != 0) 
+            if (_IsValidTotalMonthlySales()) 
             {
                 double TotalBonusAmount = Double.Parse(TotalMonthlySalesTextBox.Text, NumberStyles.Currency, CultureInfo.CurrentCulture) * 0.02;
                 double PercentageHoursWorked = Convert.ToDouble(TotalHoursWorkedNumericUpDown.Value) / 160;
@@ -64,6 +68,7 @@ namespace Sharp_Mail_Order___Sales_Bonus
         }
 
         /// <summary>
+        /// Print Button Event Handler
         /// creates a message box popup to indicate the form is printing
         /// </summary>
         /// <param name="sender"></param>
@@ -78,6 +83,7 @@ namespace Sharp_Mail_Order___Sales_Bonus
         }
 
         /// <summary>
+        /// Next Button Event Handler
         /// clears all the employee information EXCEPT the total monthly sales
         /// and sets the sales bonus back to default
         /// </summary>
@@ -92,6 +98,7 @@ namespace Sharp_Mail_Order___Sales_Bonus
         }
 
         /// <summary>
+        /// English Radio Button Event Handler
         /// changes all label and button text to display in english
         /// </summary>
         /// <param name="sender"></param>
@@ -110,6 +117,7 @@ namespace Sharp_Mail_Order___Sales_Bonus
         }
 
         /// <summary>
+        /// French Radio Button Event Handler
         /// changes all label and button text to display in french
         /// </summary>
         /// <param name="sender"></param>
@@ -128,7 +136,8 @@ namespace Sharp_Mail_Order___Sales_Bonus
         }
 
         /// <summary>
-        /// Validates user input any time the total monthyl sales value is changed
+        /// Total Monthly Sales Event Handler
+        /// validates user input any time the total monthly sales value is changed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -139,11 +148,11 @@ namespace Sharp_Mail_Order___Sales_Bonus
 
         /// <summary>
         /// determines if the total monthly sales text can be parsed as a double
-        /// if it can it returns the value, if not shows an error message
-        /// and returns focus to the total monthly sales box
+        /// if it parses succefully it formats the text and returns true
+        /// if not it shows an error message and returns focus to the total monthly sales
         /// </summary>
         /// <returns></returns>
-        private double _IsValidTotalMonthlySales()
+        private Boolean _IsValidTotalMonthlySales()
         {
             double number;
             if (!Double.TryParse(TotalMonthlySalesTextBox.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out number))
@@ -151,8 +160,11 @@ namespace Sharp_Mail_Order___Sales_Bonus
                 MessageBox.Show("Total Monthly Sales must be a dollar value.", "Invalid Input");
                 TotalMonthlySalesTextBox.Focus();
                 TotalMonthlySalesTextBox.SelectAll();
+                return false;
             }
-            return number;
+            TotalMonthlySalesTextBox.Text = number.ToString("C2");
+            return true;
         }
+        
     }
 }

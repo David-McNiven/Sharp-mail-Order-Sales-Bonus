@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailOrderSalesBonusForm));
             this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
             this.EmployeeIDTextBox = new System.Windows.Forms.TextBox();
             this.TotalMonthlySalesTextBox = new System.Windows.Forms.TextBox();
@@ -214,7 +215,6 @@
             this.MailOrderLogoPictureBox.Image = global::Sharp_Mail_Order___Sales_Bonus.Properties.Resources.Mail_Order___Sales_Bonus_Logo;
             this.MailOrderLogoPictureBox.Location = new System.Drawing.Point(12, 12);
             this.MailOrderLogoPictureBox.Name = "MailOrderLogoPictureBox";
-            this.MailOrderLogoPictureBox.Padding = new System.Windows.Forms.Padding(15);
             this.MailOrderLogoPictureBox.Size = new System.Drawing.Size(146, 144);
             this.MailOrderLogoPictureBox.TabIndex = 11;
             this.MailOrderLogoPictureBox.TabStop = false;
@@ -242,6 +242,7 @@
             this.Controls.Add(this.TotalMonthlySalesTextBox);
             this.Controls.Add(this.EmployeeIDTextBox);
             this.Controls.Add(this.EmployeeNameTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MailOrderSalesBonusForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
